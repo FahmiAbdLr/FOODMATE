@@ -37,6 +37,11 @@ Object.keys(db).forEach(modelName => {
   }
 });
 
+db.user = require('./user')(sequelize, Sequelize.DataTypes);
+db.transaksi = require('./transaksi')(sequelize, Sequelize.DataTypes);
+db.detail_transaksi = require('./detail_transaksi')(sequelize, Sequelize.DataTypes);
+db.barang = require('./barang')(sequelize, Sequelize.DataTypes);
+
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 

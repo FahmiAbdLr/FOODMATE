@@ -12,10 +12,10 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       this.belongsTo(models.transaksi, {
-        foreignKey: 'id_transaksi'
+        foreignKey: 'id_transaksi', as: 'transaksi'
       })
       this.belongsTo(models.barang, {
-        foreignKey: 'id_barang'
+        foreignKey: 'id_barang', as: 'barang'
       })
     }
   }
@@ -35,7 +35,10 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     qyt: DataTypes.INTEGER,
-    total: DataTypes.INTEGER,
+    total: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0
+    }
   }, {
     sequelize,
     modelName: 'detail_transaksi',

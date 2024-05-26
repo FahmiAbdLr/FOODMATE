@@ -11,9 +11,11 @@ app.use(express.json())
 
 const userRoute = require ('./routes/user.route')
 const barangRoute = require ('./routes/barang.route')
+const transaksiRoute = require ('./routes/transaksi.route')
 
 app.use('/user', userRoute)
 app.use('/barang', barangRoute)
+app.use('/transaksi', transaksiRoute)
 
 app.listen(8000, () => {
     console.log('Server is running on port 8000');

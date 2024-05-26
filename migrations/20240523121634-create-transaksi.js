@@ -15,7 +15,9 @@ module.exports = {
         references: {
           model: 'users',
           key: 'id_user'
-        }
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
       nama_pemesan: {
         type: Sequelize.STRING

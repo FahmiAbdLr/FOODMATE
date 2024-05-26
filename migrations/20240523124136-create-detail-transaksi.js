@@ -15,7 +15,9 @@ module.exports = {
         references: {
           model: 'transaksis',
           key: 'id_transaksi'
-        }
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
       id_barang: {
         type: Sequelize.INTEGER,
@@ -23,7 +25,9 @@ module.exports = {
         references: {
           model: 'barangs',
           key: 'id_barang'
-        }
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
       qyt: {
         type: Sequelize.INTEGER
